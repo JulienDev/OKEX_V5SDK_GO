@@ -22,7 +22,7 @@ func REST() {
 	}
 
 	// 第三个参数代表是否为模拟环境，更多信息查看接口说明
-	cli := NewRESTClient("https://www.okex.win", &apikey, true)
+	cli := NewRESTClient("https://www.okx.com", &apikey, true)
 	rsp, err := cli.Get(context.Background(), "/api/v5/account/balance", nil)
 	if err != nil {
 		return
@@ -41,7 +41,7 @@ func REST() {
 
 // 订阅私有频道
 func wsPriv() {
-	ep := "wss://ws.okex.com:8443/ws/v5/private?brokerId=9999"
+	ep := "wss://ws.okx.com:8443/ws/v5/private?brokerId=9999"
 
 	// 填写您自己的APIKey信息
 	apikey := "xxxx"
@@ -102,7 +102,7 @@ func wsPriv() {
 
 // 订阅公共频道
 func wsPub() {
-	ep := "wss://ws.okex.com:8443/ws/v5/public?brokerId=9999"
+	ep := "wss://ws.okx.com:8443/ws/v5/public?brokerId=9999"
 
 	// 创建ws客户端
 	r, err := NewWsClient(ep)
@@ -149,7 +149,7 @@ func wsPub() {
 
 // websocket交易
 func wsJrpc() {
-	ep := "wss://ws.okex.com:8443/ws/v5/private?brokerId=9999"
+	ep := "wss://ws.okx.com:8443/ws/v5/private?brokerId=9999"
 
 	// 填写您自己的APIKey信息
 	apikey := "xxxx"
